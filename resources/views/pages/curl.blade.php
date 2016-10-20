@@ -4,9 +4,9 @@
 <div class='row'>
 	<div>
 		<ul class='list-group'>
-			@foreach($fields as $field)
-				<li class='list-group-item' style='margin-top: 20px;'>
-					<span>{{ $field }}</span>
+			@foreach($fields as $field => $value)
+				<li class='list-group-item'>
+					<span>{{ $field }} <===> {{ $value }}</span>
 				</li>
 			@endforeach
 		</ul>

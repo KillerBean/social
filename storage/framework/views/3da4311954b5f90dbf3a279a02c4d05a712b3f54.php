@@ -8,10 +8,12 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 
+
     <title><?php echo e(config('app.name', 'Laravel')); ?></title>
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
+    <script   src="http://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 
     <!-- Scripts -->
     <script>

@@ -2,9 +2,9 @@
 <div class='row'>
 	<div>
 		<ul class='list-group'>
-			<?php $__currentLoopData = $fields; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $field): $__env->incrementLoopIndices(); $loop = $__env->getFirstLoop(); ?>
-				<li class='list-group-item' style='margin-top: 20px;'>
-					<span><?php echo e($field); ?></span>
+			<?php $__currentLoopData = $fields; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $field => $value): $__env->incrementLoopIndices(); $loop = $__env->getFirstLoop(); ?>
+				<li class='list-group-item'>
+					<span><?php echo e($field); ?> <===> <?php echo e($value); ?></span>
 				</li>
 			<?php endforeach; $__env->popLoop(); $loop = $__env->getFirstLoop(); ?>
 		</ul>
