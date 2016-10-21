@@ -20,12 +20,6 @@ class PagesController extends Controller
         return view('pages.settings');
     }
 
-    public function blade(){
-        $gender = 'male';
-        $text = 'Hello there!';
-        return view('blade.bladetest', compact('gender', 'text'));
-    }
-
     public function curl(){
         $url = 'http://finance.google.com/finance/info?q=BVMF,BBDC4';
         $curl = curl_init($url);

@@ -8,10 +8,6 @@
                 <div class="panel-heading">Settings</div>
 
                 <div class="panel-body">
-                    <p>{{ $married }}</p>
-
-                    <p>{{ $test }}</p>
-
                     <p>{{ $age }}</p>
                 </div>
             </div>

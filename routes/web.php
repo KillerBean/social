@@ -10,20 +10,17 @@
 | to using a Closure or controller method. Build something great!
 |
 */
-
-/*Route::get('/', function () {
-    return view('welcome');
-});*/
 Route::get('/', 'PagesController@index');
 
 Route::get('profile', 'PagesController@profile');
 Route::get('settings', 'PagesController@settings');
-Route::get('blade', 'PagesController@blade');
 Route::get('curl', 'PagesController@curl');
 
 Route::get('users', ['uses' => 'UsersController@index']);
-Route::get('users/create', ['uses' => 'UsersController@create']);
 Route::post('users', ['uses' => 'UsersController@store']);
+Route::get('users/create', ['uses' => 'UsersController@create']);
+Route::get('users/{id}', ['uses' => 'UsersController@show']);
+Route::get('users/{id}/edit', ['uses' => 'UsersController@edit']);
 
 Auth::routes();
 
