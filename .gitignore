@@ -9,7 +9,7 @@ app/storage/
 bootstrap/cache/
 .env.*.php
 .env.php
-.env
+
 *.sublime-*
 
 # Rocketeer PHP task runner and deployment package. https://github.com/rocketeers/rocketeer

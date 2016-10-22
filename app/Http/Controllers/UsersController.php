@@ -38,7 +38,7 @@ class UsersController extends Controller
         return view('users.edit', compact('user'));
     }
 
-    public function update($id){
+    public function update(Request $request, $id){
         return 'Updated';
     }
 

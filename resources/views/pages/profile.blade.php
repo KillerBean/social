@@ -8,7 +8,9 @@
                 <div class="panel-heading">Profile</div>
 
                 <div class="panel-body">
-                    <p>{{ $age }}</p>
+                    <span>User ID: {{Auth::user()->id}}</span><br>
+                    <span>Name: {{Auth::user()->name}}</span><br>
+                    <span>Name: {{Auth::user()->email}}</span>
                 </div>
             </div>
         </div>

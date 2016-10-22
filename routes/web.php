@@ -16,11 +16,16 @@ Route::get('profile', 'PagesController@profile');
 Route::get('settings', 'PagesController@settings');
 Route::get('curl', 'PagesController@curl');
 
-Route::get('users', ['uses' => 'UsersController@index']);
-Route::post('users', ['uses' => 'UsersController@store']);
-Route::get('users/create', ['uses' => 'UsersController@create']);
-Route::get('users/{id}', ['uses' => 'UsersController@show']);
-Route::get('users/{id}/edit', ['uses' => 'UsersController@edit']);
+Route::group(['as' => 'users.', 'prefix' => 'users'], function(){
+	Route::get('', ['as' => 'index', 'uses' => 'UsersController@index']);
+	Route::post('', ['as' => 'store', 'uses' => 'UsersController@store']);
+	Route::get('create', ['as' => 'create', 'uses' => 'UsersController@create']);
+	Route::get('{id}', ['as' => 'show', 'uses' => 'UsersController@show']);
+	Route::get('{id}/edit', ['as' => 'edit', 'uses' => 'UsersController@edit']);
+	Route::put('{id}', ['as' => 'update', 'uses' => 'UsersController@update']);
+});
+
+
 
 Auth::routes();
 
