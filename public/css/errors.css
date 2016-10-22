@@ -1,0 +1,9 @@
+h1.logo{
+	color:#8F8E8C;
+	font-size: 100px;
+	text-shadow: 1px 1px 6px #fff;
+	font-family: 'Courgette', cursive;
+}
+#app{
+	text-align: center;
+}
