@@ -27,6 +27,10 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    protected $casts = [
+        'is_admin' => 'boolean',
+    ];
+
     public function setNameAttribute($value){
         $this->attributes['name'] = ucfirst($value);
     }
@@ -38,6 +42,10 @@ class User extends Authenticatable
     public function getNameAttribute($value){
         return $value;
         return strtoupper($value);
+    }
+
+    public function isAdmin(){
+        return $this->is_admin;
     }
 
 }
