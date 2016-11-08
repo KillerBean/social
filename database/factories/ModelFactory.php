@@ -19,7 +19,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
         'password' => $password ?: $password = 'secret',
-        'is_admin' => $faker->boolean(),
+        'role' => $faker->randomElement($array = array ('User', 'Company', 'Admin')),
         'remember_token' => str_random(10),
     ];
 });
