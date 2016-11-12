@@ -15,13 +15,12 @@ class Admin
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next, $guard = 'admin')
+    public function handle($request, Closure $next, $guard = 'Admin')
     {
-        if(Auth::user()->isAdmin() ){
+        if( Auth::Check() && Auth::user()->isAdmin() ){
             return $next($request);
         }else{
-            abort(403);
-            //abort(403, 'Unauthorized action.');
+            return abort(403);
         }
     }
 

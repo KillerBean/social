@@ -14,7 +14,7 @@
 					<span>User Name: {{ $user->name }}</span>
 					<span class='pull-right clearfix'>Joined({{ $user->created_at->diffForHumans() }})
 					<!--<button class="btn btn-xs btn-primary">Follow</button>-->
-					<a href="{{ URL::route('users.index') }}/{{ user->id }}" class="btn btn-primary btn-xs" role="button" aria-pressed="true">Information</a>
+					<a href="{{ URL::route('users.index') }}/{{ $user->id }}" class="btn btn-primary btn-xs" role="button" aria-pressed="true">Information</a>
 					</span>
 				</li>
 			@endforeach
