@@ -44,6 +44,10 @@ class User extends Authenticatable
         return strtoupper($value);
     }
 
+    function socialProviders(){
+      return $this->hasMany(SocialProvider::class);
+    }
+
     public function isAdmin(){
         if( $this->role == 'Admin')
             $this->is_admin = true;

@@ -25,6 +25,8 @@ Route::group(['as' => 'users.', 'prefix' => 'users'], function(){
 	Route::put('{id}', ['as' => 'update', 'uses' => 'UsersController@update'])->middleware('auth');
 });
 
+Route::get('auth/{provider}', 'Auth\RegisterController@redirectToProvider');
+Route::get('auth/{provider}/callback', 'Auth\RegisterController@handleProviderCallback');
 
 
 Auth::routes();
