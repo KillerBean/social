@@ -6,10 +6,13 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use View;
+use App\Post;
+
 class PagesController extends Controller
 {
     public function index(){
-        return view('welcome');
+        $posts = Post::orderBy('created_at', 'desc')->get();
+        return view('index', ['posts' => $posts]);
     }
 
     public function profile(){

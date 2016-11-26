@@ -10,7 +10,7 @@
 | to using a Closure or controller method. Build something great!
 |
 */
-Route::get('/', 'PagesController@index');
+Route::get('/', 'PagesController@index')->middleware('auth');
 
 Route::get('profile', 'PagesController@profile')->middleware('auth');
 Route::get('settings', 'PagesController@settings')->middleware('auth');

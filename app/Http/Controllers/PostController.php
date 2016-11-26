@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     public function getDashboard(){
-        $posts = Post::orderBy('created_at', 'desc')->get();
+        $posts = Post::orderBy('created_at', 'desc')->get()->where('user_id', Auth::User()->id);
         return view('dashboard', ['posts' => $posts]);
     }
 
