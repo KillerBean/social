@@ -97,10 +97,12 @@ class RegisterController extends Controller
         $socialProvider = SocialProvider::where('provider_id', $socialUser->getID())->first();
         if(!$socialProvider)
         {
+            $faker = \Faker\Factory::create();
             //Create a new User and provider
             $user = User::FirstOrCreate(
+                ['name' => $socialUser->getName()],
                 ['email' => $socialUser->getEmail()],
-                ['name' => $socialUser->getName()]
+                ['password' => $faker->password()]
             );
 
             $user->socialProviders()->create(

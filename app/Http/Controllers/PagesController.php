@@ -29,7 +29,7 @@ class PagesController extends Controller
         // $obj = str_replace($replaces, '', $obj);
         // $fields = json_decode($obj, true);
         // $fields = (object)$fields;
-        
+
         // return view('pages.curl', compact('fields'));
         return view('pages.curl');
     }

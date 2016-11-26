@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+    'CreatePostsTable' => $baseDir . '/database/migrations/2016_11_19_183014_create_posts_table.php',
     'CreateSocialProvidersTable' => $baseDir . '/database/migrations/2016_11_14_041110_create_social_providers_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
@@ -423,6 +424,7 @@ return array(
     'PHP_Token_STRING' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_STRING_CAST' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_STRING_VARNAME' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
+    'PHP_Token_SUPER' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_SWITCH' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_Stream' => $vendorDir . '/phpunit/php-token-stream/src/Token/Stream.php',
     'PHP_Token_Stream_CachingFactory' => $vendorDir . '/phpunit/php-token-stream/src/Token/Stream/CachingFactory.php',
@@ -437,6 +439,7 @@ return array(
     'PHP_Token_UNSET' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_UNSET_CAST' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_USE' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
+    'PHP_Token_USE_FUNCTION' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_VAR' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_VARIABLE' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_WHERE' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',

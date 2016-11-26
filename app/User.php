@@ -48,6 +48,10 @@ class User extends Authenticatable
       return $this->hasMany(SocialProvider::class);
     }
 
+    public function posts(){
+        return $this->hasMany('App\Post');
+    }
+
     public function isAdmin(){
         if( $this->role == 'Admin')
             $this->is_admin = true;

@@ -10,11 +10,11 @@ class ComposerStaticInit15ebe8befcc53411d8013676347afdf1
         '1d1b89d124cc9cb8219922c9d5569199' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
-        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
-        '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
+        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
+        '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
         'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
@@ -77,6 +77,7 @@ class ComposerStaticInit15ebe8befcc53411d8013676347afdf1
         ),
         'I' => 
         array (
+            'Intervention\\Image\\' => 19,
             'Illuminate\\' => 11,
         ),
         'G' => 
@@ -110,8 +111,8 @@ class ComposerStaticInit15ebe8befcc53411d8013676347afdf1
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
         'XdgBaseDir\\' => 
         array (
@@ -225,6 +226,10 @@ class ComposerStaticInit15ebe8befcc53411d8013676347afdf1
         array (
             0 => __DIR__ . '/..' . '/laravel/socialite/src',
         ),
+        'Intervention\\Image\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image',
+        ),
         'Illuminate\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate',
@@ -315,6 +320,7 @@ class ComposerStaticInit15ebe8befcc53411d8013676347afdf1
 
     public static $classMap = array (
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+        'CreatePostsTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_19_183014_create_posts_table.php',
         'CreateSocialProvidersTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_14_041110_create_social_providers_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
@@ -731,6 +737,7 @@ class ComposerStaticInit15ebe8befcc53411d8013676347afdf1
         'PHP_Token_STRING' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_STRING_CAST' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_STRING_VARNAME' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'PHP_Token_SUPER' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_SWITCH' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_Stream' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token/Stream.php',
         'PHP_Token_Stream_CachingFactory' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token/Stream/CachingFactory.php',
@@ -745,6 +752,7 @@ class ComposerStaticInit15ebe8befcc53411d8013676347afdf1
         'PHP_Token_UNSET' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_UNSET_CAST' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_USE' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'PHP_Token_USE_FUNCTION' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_VAR' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_VARIABLE' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_WHERE' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',

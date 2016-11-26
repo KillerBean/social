@@ -12,16 +12,13 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="/css/app.css" rel="stylesheet">
-    <script src="http://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+    <link href="{{ URL::To('/css/app.css') }}" rel="stylesheet">
+    <link href="{{ URL::To('/css/posts.css') }}" rel="stylesheet">
+    <link href="{{ URL::To('/css/style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/52d9607eb4.css">
     @yield('heading')
 
-    <!-- Scripts -->
-    <script>
-        window.Laravel = <?php echo json_encode([
-            'csrfToken' => csrf_token(),
-        ]); ?>
-    </script>
+
 </head>
 <body>
     <div id="app">
@@ -38,7 +35,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <a class="navbar-brand" href="{{ url('/dashboard') }}">
                         {{ config('app.name', 'Laravel') }}
                     </a>
                 </div>
@@ -53,16 +50,23 @@
                             <li><a href="{{ url('/register') }}">Register</a></li>
                         @else
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User: 
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                <a href="#" class="dropdown-toggle profile-drop" data-toggle="dropdown" role="button" aria-expanded="false">
+                                <img src="  @if(file_exists(public_path().'/uploads/avatars/'.Auth::User()->avatar))
+                                                {{ URL::To('/uploads/avatars') }}/{{Auth::User()->avatar}}
+                                            @else
+                                                    {{ URL::To('/uploads/avatars/default.jpg') }}
+                                            @endif
+                                                " class="profile-min" height="32px" width="32px">
+                                    <span>{{ Auth::user()->name }}</span> <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="{{URL::to('profile')}}">Profile</a></li>
+                                    <li><a href="{{URL::to('account')}}"><i class="fa fa-user-circle-o"></i> Account</a></li>
+                                    <li><a href="{{URL::to('dashboard')}}"><i class="fa fa-book"></i> Dashboard</a></li>
                                     <li>
                                         <a href="{{ url('/logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                            <i class="fa fa-sign-out"></i>
                                             Logout
                                         </a>
 
@@ -82,6 +86,14 @@
     </div>
 
     <!-- Scripts -->
-    <script src="/js/app.js"></script>
+    <script src="{{URL::To('/js/app.js')}}"></script>
+    <script src="{{URL::To('/js/posts.js')}}"></script>
+    <!-- Scripts -->
+    <script>
+        window.Laravel = <?php echo json_encode([
+            'csrfToken' => csrf_token(),
+        ]); ?>
+    </script>
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 </body>
 </html>
