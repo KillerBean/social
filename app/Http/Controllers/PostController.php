@@ -8,12 +8,12 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function getDashboard(){
+    public function dashboard(){
         $posts = Post::orderBy('created_at', 'desc')->get()->where('user_id', Auth::User()->id);
         return view('dashboard', ['posts' => $posts]);
     }
 
-    public function postCreatePost(Request $request){
+    public function createPost(Request $request){
         $this->validate($request, [
             'body' => 'required|max:1000'
         ]);

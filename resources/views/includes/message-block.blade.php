@@ -15,7 +15,7 @@
   <div class="row">
     <div class="col-md-4 col-md-offset-4">
       <div class="message alert alert-success">
-        {{ Session::get('message') }}
+        <li>{{ Session::get('message') }}</li>
       </div>
     </div>
   </div>

@@ -25,11 +25,11 @@ Route::group(['as' => 'users.', 'prefix' => 'users'], function(){
 	Route::put('{id}', ['as' => 'update', 'uses' => 'UserController@update'])->middleware('auth');
 });
 
-Route::post('post.create', 'PostController@postCreatePost')->name('post.create');
+Route::post('post.create', 'PostController@createPost')->name('post.create');
 Route::get('post-delete/{post_id}', 'PostController@deletePost')->name('post.delete');
 Route::post('post/edit','PostController@editPost')->name('post-edit');
 
-Route::get('dashboard', 'PostController@getDashboard')->name('dashboard')->middleware('auth');
+Route::get('dashboard', 'PostController@dashboard')->name('dashboard')->middleware('auth');
 Route::get('account', 'UserController@account')->name('account')->middleware('auth');
 Route::post('update-account','UserController@saveAccount')->name('account.save')->middleware('auth');
 
