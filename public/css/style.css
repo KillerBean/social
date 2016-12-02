@@ -1,13 +1,4 @@
 .profile{
-    float: left;
-    border-radius: 50%;
-}
-
-.profile-min{
-    border-radius: 50%;
-}
-
-.profile-drop{
-    position: relative;
-    padding: 9px !important;
+    padding-top: 9px !important;
+    padding-bottom: 9px !important;
 }

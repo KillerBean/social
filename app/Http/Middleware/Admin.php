@@ -17,10 +17,10 @@ class Admin
      */
     public function handle($request, Closure $next, $guard = 'Admin')
     {
-        if( Auth::Check() && Auth::user()->isAdmin() ){
+        if( Auth::Check() && Auth::user()->role == "Admin" ){
             return $next($request);
         }else{
-            return abort(403);
+            return abort(404);
         }
     }
 

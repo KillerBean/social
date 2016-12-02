@@ -1,11 +1,21 @@
 .new-post{
     padding: 16px 0;
-    border-bottom: 1px solid #ccc;
+    /*border-bottom: 1px solid #ccc;*/
 }
 
 .new-post header, .posts header {
     margin-bottom: 20px;
 }
+section.new-post.row {
+    padding-top: 0 !important;
+}
+
+section.new-post.row > div > header> h3 {
+    margin-top: 10px !important;
+}
+/*section.row.posts > div > header> h3 {
+    margin-top: 10px !important;
+}*/
 
 .posts .post {
     padding-left: 10px;
@@ -19,6 +29,35 @@
 }
 .message {
     text-align: center;
-    padding: 0;
-    margin: 0;
+    padding: 0 30px;
+    margin: 0 20px;
 }
+
+.message > ul > li{
+    list-style: none;
+    width: auto;
+}
+/* Begin the paste function */
+.target {
+    border: solid 1px #aaa;
+    margin-top: 1em;
+    border-radius: 5px;
+    transition: 300ms all;
+    position: relative;
+    max-height: 700px;
+    max-width: 700px;
+}
+
+.contain {
+    background-size: cover;
+    position: relative;
+    min-height: 200px;
+    width: 30%;
+    z-index: 10;
+    top: 0;
+    left: 0px;
+}
+.active {
+    box-shadow: 0 0 1px 1px rgba(70,89,101,.1);
+}
+/* End the paste function */

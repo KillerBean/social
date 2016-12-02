@@ -5,10 +5,10 @@
             Posted By {{ $post->user->name }} on <i>{{ $post->created_at->diffForHumans() }}</i>.
         </div>
         <div class="interaction">
-            <a class="btn btn-success" href="#">
-                <i class="fa fa-thumbs-o-up"></i> Like</a>
-            <a class="btn btn-info" href="#">
-                <i class="fa fa-thumbs-o-down"></i> Dislike</a>
+            <a class="like btn btn-success" href="#">
+                <i class="fa {{ Auth::user()->likes()->where('post_id', $post->id)->first() ?  Auth::user()->likes()->where('post_id', $post->id)->first()->like == 1 ? 'fa-check-circle' : 'fa-thumbs-o-up' : 'fa-thumbs-o-up' }}" id="like"></i> Like</a>
+            <a class="like btn btn-info" href="#">
+                <i class="fa {{ Auth::user()->likes()->where('post_id', $post->id)->first() ?  Auth::user()->likes()->where('post_id', $post->id)->first()->like == 0 ? 'fa-check-circle' : 'fa-thumbs-o-down' : 'fa-thumbs-o-down' }}" id="dislike"></i> Dislike</a>
             @if($post->user == Auth::User())
 
             <a class="edit btn btn-warning" href="#">

@@ -52,6 +52,10 @@ class User extends Authenticatable
         return $this->hasMany('App\Post');
     }
 
+    public function likes(){
+        return $this->hasMany('App\Like');
+    }
+
     public function isAdmin(){
         if( $this->role == 'Admin')
             $this->is_admin = true;

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use App\Http\Requests;
 use View;
@@ -11,8 +12,13 @@ use App\Post;
 class PagesController extends Controller
 {
     public function index(){
-        $posts = Post::orderBy('created_at', 'desc')->get();
-        return view('index', ['posts' => $posts]);
+        if(Auth::Check()){
+            $posts = Post::orderBy('created_at', 'desc')->get();
+            return view('index', ['posts' => $posts]);
+        }else{
+            return view('index2');
+        }
+
     }
 
     public function profile(){
@@ -23,7 +29,7 @@ class PagesController extends Controller
         return view('pages.settings');
     }
 
-    public function curl(){
+    public function bmf(){
         // $url = 'http://finance.google.com/finance/info?q=BVMF,BBDC4';
         // $curl = curl_init($url);
         // curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -34,6 +40,6 @@ class PagesController extends Controller
         // $fields = (object)$fields;
 
         // return view('pages.curl', compact('fields'));
-        return view('pages.curl');
+        return view('pages.bmf');
     }
 }

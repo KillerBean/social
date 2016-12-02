@@ -19,7 +19,7 @@ class AppServiceProvider extends ServiceProvider
         //$age = Carbon::createFromDate(1996, 2, 19)->age;
 
         //View::share('age', $age);
-       
+
         View::composer('*', function($view){
             $view->with('auth', Auth::user());
         });

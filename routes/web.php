@@ -10,11 +10,10 @@
 | to using a Closure or controller method. Build something great!
 |
 */
-Route::get('/', 'PagesController@index')->middleware('auth');
 
 Route::get('profile', 'PagesController@profile')->middleware('auth');
 Route::get('settings', 'PagesController@settings')->middleware('auth');
-Route::get('curl', 'PagesController@curl')->middleware('auth');
+Route::get('bmf-chart', 'PagesController@bmf')->middleware('auth');
 
 Route::group(['as' => 'users.', 'prefix' => 'users'], function(){
 	Route::get('', ['as' => 'index', 'uses' => 'UserController@index'])->middleware('auth');
@@ -28,6 +27,7 @@ Route::group(['as' => 'users.', 'prefix' => 'users'], function(){
 Route::post('post.create', 'PostController@createPost')->name('post.create');
 Route::get('post-delete/{post_id}', 'PostController@deletePost')->name('post.delete');
 Route::post('post/edit','PostController@editPost')->name('post-edit');
+Route::post('post/like','PostController@likePost')->name('post-like');
 
 Route::get('dashboard', 'PostController@dashboard')->name('dashboard')->middleware('auth');
 Route::get('account', 'UserController@account')->name('account')->middleware('auth');
@@ -38,5 +38,5 @@ Route::get('auth/{provider}/callback', 'Auth\RegisterController@handleProviderCa
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
 Route::get('/admin', ['as' => 'admin', 'uses' => 'AdminController@index'])->middleware('admin');
+Route::get('/', 'PagesController@index');
