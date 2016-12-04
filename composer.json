@@ -10,7 +10,8 @@
         "twbs/bootstrap": "^3.3",
         "almasaeed2010/adminlte": "~2.0",
         "laravel/socialite": "^2.0",
-        "intervention/image": "^2.3"
+        "intervention/image": "^2.3",
+        "hootlex/laravel-friendships": "^1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

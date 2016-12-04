@@ -57,22 +57,6 @@
 })(jQuery);
 
 $("html").pasteImageReader(function(results) {
+    $('#modal-photo-save').css("display", "inline-block");
     return $(".active").attr("src", results.dataURL);
-});
-
-$("form").on('submit', function () {
-    var processData = true;
-    var dataURL = $(".active").attr("src");
-
-    $.ajax({
-        method: 'POST',
-        type: $(this).attr('method'),
-        url: urlAccountSave,
-        data: { image_paste: dataURL, _token: token }
-    })
-    .done(function (msg){
-        console.log('Worked');
-
-    });
-
 });

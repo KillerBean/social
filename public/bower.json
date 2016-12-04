@@ -1,0 +1,20 @@
+{
+  "name": "public",
+  "homepage": "https://github.com/KillerBean/social",
+  "authors": [
+    "KillerBean <nando.roseno@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "blueimp-file-upload": "jquery-file-upload#^9.14.1"
+  }
+}

@@ -4,10 +4,12 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Hootlex\Friendships\Traits\Friendable;
 
 class User extends Authenticatable
 {
     use Notifiable;
+    use Friendable;
 
     /**
      * The attributes that are mass assignable.
@@ -25,10 +27,6 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password', 'remember_token',
-    ];
-
-    protected $casts = [
-        'is_admin' => 'boolean',
     ];
 
     public function setNameAttribute($value){
@@ -54,13 +52,6 @@ class User extends Authenticatable
 
     public function likes(){
         return $this->hasMany('App\Like');
-    }
-
-    public function isAdmin(){
-        if( $this->role == 'Admin')
-            $this->is_admin = true;
-
-        return $this->is_admin;
     }
 
 }

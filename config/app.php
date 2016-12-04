@@ -181,6 +181,7 @@ return [
 
         Laravel\Socialite\SocialiteServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        Hootlex\Friendships\FriendshipsServiceProvider::class,
 
     ],
 

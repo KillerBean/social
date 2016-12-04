@@ -30,6 +30,7 @@
     26 => 'App\\Providers\\RouteServiceProvider',
     27 => 'Laravel\\Socialite\\SocialiteServiceProvider',
     28 => 'Intervention\\Image\\ImageServiceProvider',
+    29 => 'Hootlex\\Friendships\\FriendshipsServiceProvider',
   ),
   'eager' => 
   array (
@@ -49,6 +50,7 @@
     13 => 'App\\Providers\\EventServiceProvider',
     14 => 'App\\Providers\\RouteServiceProvider',
     15 => 'Intervention\\Image\\ImageServiceProvider',
+    16 => 'Hootlex\\Friendships\\FriendshipsServiceProvider',
   ),
   'deferred' => 
   array (

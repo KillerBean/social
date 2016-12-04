@@ -65,20 +65,20 @@ class UserController extends Controller
     public function saveAccount(Request $request){
         $this->validate($request, [
             'name' => 'max:120',
-            'image_paste', 'max:2048',
+            'image_paste' => 'image|max:2048',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $user = Auth::user();
-        if($request['name']){
+        if($request->has('name')){
             $user->name = $request['name'];
             $name = $request['name'];
         }else{
             $name = $user->name;
         }
-        if($request['image_paste']){
+        if($request->has('image_paste')){
             $image = $request['image_paste'];
-            $base64_string = str_replace('data:image/png;base64', '', $image);
+            $base64_string = str_replace('data:image/png;base64,', '', $image);
             $avatar = base64_decode($base64_string);
 
             $filename = $name . '-' . Auth::User()->id . '.png';

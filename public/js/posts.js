@@ -12,7 +12,30 @@ $('.post').find('.interaction').find('.edit').on('click', function(event){
     $('#edit-modal').modal();
 });
 
+$('.edit-photo').on('click', function(event){
+    event.preventDefault();
+    $('#edit-photo-modal').modal();
+});
+
+$('#modal-photo-save').on('click', function(){
+    var dataURL = $(".active").attr("src");
+    var url = $("#fileupload").data('url');
+    var token = $("#fileupload").data('token');
+
+    $.ajax({
+        method: 'POST',
+        type: $(this).attr('method'),
+        url: url,
+        data: { image_paste: dataURL, _token: token }
+    })
+    .done(function (msg){
+        window.location.reload(true);
+    });
+});
+
 $('#modal-save').on('click', function(){
+    var urlEdit = $('#modal-save').data("url");
+    var token = $("#fileupload").data('token');
     $.ajax({
         method: 'POST',
         url: urlEdit,
@@ -24,8 +47,18 @@ $('#modal-save').on('click', function(){
     });
 });
 
+
+
+function nl2br (str, is_xhtml) {
+    var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';
+    return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1'+ breakTag +'$2');
+}
+
+
 $('.like').on('click', function(event){
     event.preventDefault();
+    var urlLike = $(this).data("url");
+    var token = $("#fileupload").data('token');
     postId = event.target.parentNode.parentNode.dataset['postid'];
     var isLike = event.target.previousElementSibling == null;
     $.ajax({

@@ -28,6 +28,7 @@ Route::post('post.create', 'PostController@createPost')->name('post.create');
 Route::get('post-delete/{post_id}', 'PostController@deletePost')->name('post.delete');
 Route::post('post/edit','PostController@editPost')->name('post-edit');
 Route::post('post/like','PostController@likePost')->name('post-like');
+route::post('post-image/upload', 'PostController@uploadPostImage')->name('post.image-upload');
 
 Route::get('dashboard', 'PostController@dashboard')->name('dashboard')->middleware('auth');
 Route::get('account', 'UserController@account')->name('account')->middleware('auth');
