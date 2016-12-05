@@ -46,6 +46,11 @@
 
                         <!-- Right Side Of Navbar -->
                         <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <div class="form-group" style="padding-top: 10px; margin: auto;">
+                                    <input type="text" class="form-control" id="search_for" max-lenght="64" placeholder="Search Users">
+                                </div>
+                            </li>
                             <!-- Authentication Links -->
                             @if (Auth::guest())
                                 <li><a href="{{ url('/login') }}">Login</a></li>
@@ -94,6 +99,7 @@
     <!-- Scripts -->
     <script src="{{ URL::To('/js/app.js') }}"></script>
     <script src="{{ URL::To('/js/posts.js') }}"></script>
+    <script src="{{ URL::To('/js/main.js') }}"></script>
     @yield('scripts')
     <script>
         window.Laravel = <?php echo json_encode([
