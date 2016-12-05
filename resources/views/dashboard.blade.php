@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('heading')
-<link rel="stylesheet" href="{{ URL::To('/bower_components/blueimp-file-upload/css/jquery.fileupload.css') }}">
+    <link rel="stylesheet" href="{{ URL::To('/bower_components/blueimp-file-upload/css/jquery.fileupload.css') }}">
 @endsection
 
 @section('content')

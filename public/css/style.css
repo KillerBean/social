@@ -5,3 +5,7 @@
 #modal-photo-save{
     display: none;
 }
+.modal-image{
+    max-width: 500px;
+    max-height: 500px;
+}

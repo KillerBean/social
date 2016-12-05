@@ -65,6 +65,7 @@
                                     <ul class="dropdown-menu" role="menu">
                                         <li><a href="{{URL::to('bmf-chart')}}"><i class="fa fa-line-chart fa-fw"></i> Charts Page</a></li>
                                         <li><a href="{{URL::to('account')}}"><i class="fa fa-user-circle-o fa-fw"></i> Account</a></li>
+                                        <li><a href="{{URL::to('friends')}}"><i class="fa fa-address-book-o fa-fw"></i> Friends</a></li>
                                         <li><a href="{{URL::to('dashboard')}}"><i class="fa fa-book fa-fw"></i> Dashboard</a></li>
                                         <li>
                                             <a href="{{ url('/logout') }}"

@@ -32,6 +32,10 @@ class UserController extends Controller
     	return 'Success';
     }
 
+    public function friendsIndex(){
+        return view('friends.index');
+    }
+
     public function show($id)
     {
         $user = User::findOrFail($id);
@@ -67,6 +71,8 @@ class UserController extends Controller
             'name' => 'max:120',
             'image_paste' => 'image|max:2048',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'password' => 'same:password_confirmation|min:8|max:20',
+            'password_confirmation' => 'requiredif:password|min:8|max:20',
         ]);
 
         $user = Auth::user();
@@ -92,6 +98,11 @@ class UserController extends Controller
             $filename = str_replace(array(' ', "'"), '_', $filename);
             Image::make($avatar)->resize(300,300)->save(public_path('/uploads/avatars/' . $filename));
             $user->avatar = '/uploads/avatars/' . $filename;
+        }
+
+        if($request->has['password']){
+            $password = $request['password'];
+            $user->password = bcrypt($password);
         }
 
         $user->update();

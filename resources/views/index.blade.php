@@ -1,10 +1,13 @@
 @extends('layouts.app')
 
+@section('heading')
+<link rel="stylesheet" href="{{ URL::To('/bower_components/blueimp-file-upload/css/jquery.fileupload.css') }}">
+@endsection
+
 @section('content')
     @include('includes.message-block')
     <section class="row new-post">
         <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
-            <header><h3>What do you have to say</h3></header>
             <form action="{{ route('post.create') }}" method="post">
                 {{ csrf_field() }}
                 <div class="form-group">

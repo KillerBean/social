@@ -2,7 +2,7 @@
     <article class="post" data-postid="{{ $post->id }}">
         <p>{!! nl2br($post->body) !!}</p>
         @if($post->has_image == 1)
-        <img src="{{$post->image_path}}" alt="imagem do post" class="img-responsive">
+        <img src="{{$post->image_path}}" alt="imagem do post" class="post-image img-responsive">
         @endif
         <div class="info">
             Posted By {{ $post->user->name }} on <i>{{ $post->created_at->diffForHumans() }}</i>.

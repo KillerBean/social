@@ -11,8 +11,6 @@
 |
 */
 
-Route::get('profile', 'PagesController@profile')->middleware('auth');
-Route::get('settings', 'PagesController@settings')->middleware('auth');
 Route::get('bmf-chart', 'PagesController@bmf')->middleware('auth');
 
 Route::group(['as' => 'users.', 'prefix' => 'users'], function(){
@@ -32,6 +30,7 @@ route::post('post-image/upload', 'PostController@uploadPostImage')->name('post.i
 
 Route::get('dashboard', 'PostController@dashboard')->name('dashboard')->middleware('auth');
 Route::get('account', 'UserController@account')->name('account')->middleware('auth');
+Route::get('friends', 'UserController@friendsIndex')->name('friends')->middleware('auth');
 Route::post('update-account','UserController@saveAccount')->name('account.save')->middleware('auth');
 
 Route::get('auth/{provider}', 'Auth\RegisterController@redirectToProvider');

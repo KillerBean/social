@@ -29,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/dashboard';
 
     /**
      * Create a new controller instance.
@@ -91,18 +91,17 @@ class RegisterController extends Controller
         try {
             $socialUser = Socialite::driver($provider)->user();
         } catch (\Exception $e) {
+            dd($e);
             return redirect('/');
         }
         //check if we have logged provider
         $socialProvider = SocialProvider::where('provider_id', $socialUser->getID())->first();
         if(!$socialProvider)
         {
-            $faker = \Faker\Factory::create();
             //Create a new User and provider
             $user = User::FirstOrCreate(
                 ['name' => $socialUser->getName()],
-                ['email' => $socialUser->getEmail()],
-                ['password' => $faker->password()]
+                ['email' => $socialUser->getEmail()]
             );
 
             $user->socialProviders()->create(
@@ -112,8 +111,8 @@ class RegisterController extends Controller
             $user = $socialProvider->user;
 
         auth()->login($user);
-
-        return redirect('/home');
         // $user->token;
+
+        return redirect('/dashboard');
     }
 }

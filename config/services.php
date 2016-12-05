@@ -38,19 +38,19 @@ return [
     'github' => [
       'client_id' => 'b9ff3fa86903b3824c76',
       'client_secret' => '0c86510cfcc776b62a2629d8200c2311fbc5fa02',
-      'redirect' => 'http://localhost:8000/auth/github/callback',
+      'redirect' => 'http://social.dev/auth/github/callback',
     ],
 
     'twitter' => [
       'client_id' => 'Bo9VK0vP26goJRG3Ca0GfRRbU',
       'client_secret' => 'uhTdVSZ9dF8cXvMaVi8Ea4GiSEVbCMvzcQ31emah1REA5fuugT',
-      'redirect' => 'http://localhost:8000/auth/twitter/callback',
+      'redirect' => 'http://social.dev/auth/twitter/callback',
     ],
 
     'google' => [
-      'client_id' => '438158835603-h13f97s07imf3vd9ahp8npvchrsvq7vu.apps.googleusercontent.com',
+      'client_id' => '353588379859-il02roh3q6ek917n9rg22ggn6dsn32j4.apps.googleusercontent.com',
       'client_secret' => 'YQ52nYqTA0_Q898ZvtR4fohm',
-      'redirect' => 'http://localhost:8000/auth/google/callback',
+      'redirect' => 'http://social.dev/auth/google/callback',
     ],
 
 ];
