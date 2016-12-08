@@ -17,13 +17,14 @@ Route::get('befriend/{id}', 'FriendController@SendFriendRequest')->middleware('a
 Route::get('acceptfriend/{id}', 'FriendController@AcceptFriendRequest')->middleware('auth');
 Route::get('unfriend/{id}', 'FriendController@UnfriendOrCancelRequest')->middleware('auth');
 
-Route::group(['as' => 'users.', 'middleware' => 'auth', 'prefix' => 'users'], function(){
+Route::group(['as' => 'users.', 'middleware' => 'admin', 'prefix' => 'users'], function(){
 	Route::get('', ['as' => 'index', 'uses' => 'UserController@index']);
 	Route::post('', ['as' => 'store', 'uses' => 'UserController@store']);
 	Route::get('create', ['as' => 'create', 'uses' => 'UserController@create']);
 	Route::get('{id}', ['as' => 'show', 'uses' => 'UserController@show']);
 	Route::get('{id}/edit', ['as' => 'edit', 'uses' => 'UserController@edit']);
 	Route::put('{id}', ['as' => 'update', 'uses' => 'UserController@update']);
+	Route::get('delete/{id}', ['as' => 'delete', 'uses' => 'UserController@destroy']);
 });
 
 Route::post('post.create', 'PostController@createPost')->name('post.create');
@@ -44,4 +45,5 @@ Route::get('auth/{provider}/callback', 'Auth\RegisterController@handleProviderCa
 Auth::routes();
 
 Route::get('/admin', ['as' => 'admin', 'uses' => 'AdminController@index'])->middleware('admin');
+Route::get('/admin/reports', ['as' => 'admin.reports', 'uses' => 'AdminController@reports'])->middleware('admin');
 Route::get('/', 'PagesController@index');

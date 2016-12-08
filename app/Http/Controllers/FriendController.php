@@ -20,7 +20,7 @@ class FriendController extends Controller
         $user = Auth::User();
         $recipient = User::findOrFail($id);
         $user->befriend($recipient);
-        return redirect()->back()->with("Status", "Request has been send.");
+        return redirect()->back()->with("message", "Request has been send.");
     }
 
     public function AcceptFriendRequest($id){

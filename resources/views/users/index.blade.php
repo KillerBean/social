@@ -6,7 +6,14 @@
 		<h3>{{ $users->total() }} total users</h3>
 
 		<b>In this page ({{ $users->count() }} users)</b>
-
+		@if(Session::has('message'))
+		    <div class="row">
+		            <div class="message alert alert-success alert-dismissable" role="alert">
+		                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		                <ul><li>{{ Session::get('message') }}</li></ul>
+		            </div>
+		    </div>
+		@endif﻿
 		<ul class='list-group'>
 			@foreach($users as $user)
 				<li class='list-group-item' style='margin-top: 20px;'>

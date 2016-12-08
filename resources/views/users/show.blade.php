@@ -10,16 +10,22 @@
 					<span>User ID: {{$user->id}}</span><br>
 					<span>Name: {{$user->name}}</span><br>
 					<span>E-mail: {{$user->email}}</span>
-					@if(!$user->isFriendWith(Auth::User()) && !$user->hasFriendRequestFrom(Auth::User()))
+					<br>
+					@if(!$user->isFriendWith(Auth::User()) && !$user->hasFriendRequestFrom(Auth::User()) && $user != Auth::User() )
 						<a href="{{URL::To('/befriend',$user->id)}}" class="pull-right btn btn-primary">
 							<i class="fa fa-user"></i> Send Friend Request
 						</a>
 					@elseif($user->isFriendWith(Auth::User()))
 						<p class="pull-right">You are already friends.</p>
 					@else
-						<a href="{{URL::To('/unfriend',$user->id)}}" id="friend-request" class="pull-right btn btn-success">
-							<i class="fa fa-user-o"></i> Friend request has been sent
-						</a>
+						@if($user != Auth::User())
+							<a href="{{URL::To('/unfriend',$user->id)}}" id="friend-request" class="pull-right btn btn-success">
+								<i class="fa fa-user-o"></i> Friend request has been sent
+							</a>
+						@endif
+					@endif
+					@if(Auth::User()->role == "Admin" && $user != Auth::User())
+					<a href="{{URL::To('users/delete', $user->id)}}" class="btn btn-danger">Delete User</a>
 					@endif
                 </div>
             </div>

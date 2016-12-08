@@ -47,7 +47,7 @@
                         <!-- Right Side Of Navbar -->
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <div class="form-group" style="padding-top: 10px; margin: auto;">
+                                <div class="form-group" style="padding-top: 7px; margin: auto;">
                                     <input type="text" class="form-control" id="search_for" max-lenght="64" placeholder="Search Users">
                                 </div>
                             </li>
@@ -70,6 +70,9 @@
                                     <ul class="dropdown-menu" role="menu">
                                         <li><a href="{{URL::to('bmf-chart')}}"><i class="fa fa-line-chart fa-fw"></i> Charts Page</a></li>
                                         <li><a href="{{URL::to('account')}}"><i class="fa fa-user-circle-o fa-fw"></i> Account</a></li>
+                                        @if(Auth::user()->role == 'Admin')
+                                        <li><a href="{{URL::to('admin')}}"><i class="fa fa-vcard fa-fw"></i> Admin Page</a></li>
+                                        @endif
                                         <li><a href="{{URL::to('friends')}}"><i class="fa fa-address-book-o fa-fw"></i> Friends @if(Auth::User()->getFriendRequests()->Count()) <span class="badge">{{ Auth::User()->getFriendRequests()->Count() }}</span>@endif</a></li>
                                         <li><a href="{{URL::to('dashboard')}}"><i class="fa fa-book fa-fw"></i> Dashboard</a></li>
                                         <li>
