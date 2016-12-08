@@ -1,3 +1,4 @@
+;(function ($) {
 var search_bar = $('#search_for');
 search_bar.on('keypress', function(e){
     if(e.which == 13){
@@ -5,3 +6,4 @@ search_bar.on('keypress', function(e){
             window.location = "/search/" + encodeURIComponent(search_bar.val());
     }
 });
+})(window.jQuery);

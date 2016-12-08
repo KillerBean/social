@@ -12,7 +12,7 @@ class SearchController extends Controller
         if($query == null)
             return redirect()->back();
 
-        $search = User::where('name', 'like', '%'.$query.'%')->orwhere('email', 'like', '%'.$query.'%')->get();
+        $search = User::where('name', 'like', '%'.$query.'%')->orwhere('email', 'like', '%'.$query.'%')->paginate(10);
 
         return view('search', [
             'results' => $search,

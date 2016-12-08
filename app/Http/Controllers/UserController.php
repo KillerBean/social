@@ -32,10 +32,6 @@ class UserController extends Controller
     	return 'Success';
     }
 
-    public function friendsIndex(){
-        return view('friends.index');
-    }
-
     public function show($id)
     {
         $user = User::findOrFail($id);
