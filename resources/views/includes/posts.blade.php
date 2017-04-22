@@ -1,6 +1,6 @@
 @foreach($posts as $post)
     <article class="post" data-postid="{{ $post->id }}">
-        <p>{!! nl2br($post->body) !!}</p>
+        <p id="body-text">{{ $post->body }}</p>
         @if($post->has_image == 1)
         <img src="{{$post->image_path}}" alt="imagem do post" class="post-image img-responsive">
         @endif

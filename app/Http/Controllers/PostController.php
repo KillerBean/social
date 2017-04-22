@@ -112,16 +112,19 @@ class PostController extends Controller
             unlink(public_path() . $post->image_path);
         }
         $post->delete();
-        return redirect()->route('dashboard')->with(['message' => 'Successfully deleted.']);
+        return redirect()->route('dashboard')->with(['message' => 'Post successfully deleted.']);
     }
 
     public function editPost(Request $request){
         $this->validate($request, [
             'body' => 'required'
         ]);
+        if (Auth::User() != $post->user){
+            return redirect()->back();
+        }
         $post = Post::find($request['postId']);
         $post->body = $request['body'];
         $post->update();
-        return response()->json(['new_body' => nl2br($post->body)], 200);
+        return response()->json(['new_body' => $post->body], 200);
     }
 }

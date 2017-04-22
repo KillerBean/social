@@ -42,17 +42,11 @@ $('#modal-save').on('click', function(){
         data: { body: $('#post-body').val(), postId: postId, _token: token }
     })
     .done(function (msg){
-        $(postBodyElement).text(msg['new_body']);
+        $('#body-text').text(msg['new_body']);
         $('#edit-modal').modal('hide');
     });
 });
 
-
-
-function nl2br (str, is_xhtml) {
-    var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';
-    return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1'+ breakTag +'$2');
-}
 
 
 $('.like').on('click', function(event){

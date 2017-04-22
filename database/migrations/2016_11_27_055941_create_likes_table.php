@@ -17,7 +17,9 @@ class CreateLikesTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->integer('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->integer('post_id');
+            $table->foreign('post_id')->references('id')->on('posts');
             $table->boolean('like');
         });
     }

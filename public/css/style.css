@@ -9,6 +9,9 @@
     max-width: 500px;
     max-height: 500px;
 }
+#body-text{
+  white-space: pre-wrap;
+}
 nav.navbar.navbar-default{
     background-color: #f5f8fa;
 }

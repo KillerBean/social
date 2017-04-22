@@ -19,7 +19,8 @@ class CreatePostsTable extends Migration
             $table->text('body');
             $table->boolean('has_image')->default(false);
             $table->string('image_path')->default('/uploads/images/Image-Not-Available.jpg');
-            $table->integer('user_id');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
