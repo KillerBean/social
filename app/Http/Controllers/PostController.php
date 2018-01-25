@@ -26,7 +26,7 @@ class PostController extends Controller
         if($request['has_image'] == 1){
             $post->has_image = true;
             $image_id = rand();
-            if(file_exists(public_path() . '/uploads/images/' . Auth::User()->id . '/' . $image_id . '-' . Auth::User()->id . '.png')){
+            while(file_exists(public_path() . '/uploads/images/' . Auth::User()->id . '/' . $image_id . '-' . Auth::User()->id . '.png')){
                 $image_id = rand();
             }
             if(!file_exists(public_path() . '/uploads/images/' . Auth::User()->id)){
@@ -106,7 +106,7 @@ class PostController extends Controller
     public function deletePost($post_id){
         $post = Post::where('id', $post_id)->first();
         if (Auth::User() != $post->user){
-            return redirect()->back();
+            return redirect()->back()->with(['errors' => 'Not Logged with the right user to delete this Post']);
         }
         if($post->has_image){
             unlink(public_path() . $post->image_path);
