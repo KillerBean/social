@@ -28,7 +28,7 @@
 <div class="col-md-6 col-md-offset-3">
     <div class="panel panel-default">
         <div class="panel-heading">
-        <p> These people have sent friend requests to you:</p>
+        <p> These people are your friends now:</p>
         </div>
         <div class="panel-body">
             @foreach($friends as $friend)
