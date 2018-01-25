@@ -62,12 +62,7 @@
                             @else
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle profile" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    <img src="  @if(file_exists(public_path() . Auth::User()->avatar))
-                                                    {{ URL::To(Auth::User()->avatar)}}
-                                                @else
-                                                        {{ URL::To('/uploads/avatars/default.jpg') }}
-                                                @endif
-                                                    " class="img-circle" height="32px" width="32px">
+                                    <img src="{{ URL::To(Auth::User()->avatar)}}" class="img-circle" height="32px" width="32px">
                                         <span>{{ Auth::user()->name }}</span> <span class="caret"></span>
                                     </a>
 
